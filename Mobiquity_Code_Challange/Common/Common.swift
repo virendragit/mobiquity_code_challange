@@ -18,6 +18,6 @@ struct Constants {
 
 struct ApiEndpoints
 {
-    static let todayForcast = "http:// api.openweathermap.org/data/2.5/weather?q=london&appid=\(Constants.apiKey))"
+    static let todayForcast = "http:// api.openweathermap.org/data/2.5/weather?q=london&appid=\(Constants.apiKey)"
     static let fiveDayForcast = "http://api.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=\(Constants.apiKey)&units=metric"
 }
