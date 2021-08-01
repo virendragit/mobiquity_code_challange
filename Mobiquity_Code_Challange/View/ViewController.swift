@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, WeatherViewModelDelegate {
 
+    
+
     private var weatherViewModel = WeatherViewModel()
 
     override func viewDidLoad() {
@@ -17,13 +19,18 @@ class ViewController: UIViewController, WeatherViewModelDelegate {
         
         weatherViewModel.delegate = self
         
-        weatherViewModel.ServiceCallToGetData()
+       weatherViewModel.ServiceCallToGetTodayForcast()
+//        weatherViewModel.ServiceCallToGetFiveDaysForcast()
+
     }
     
     
-    func didReceiveWeatherResponse(weatherResponse: TodayForcastData?) {
+    func didReceiveWeatherResponseForToday(weatherResponse: TodayForcastData?) {
         print(weatherResponse!)
-        
+    }
+    
+    func didReceiveWeatherResponseForFiveDays(weatherResponse: FiveDayForcast?) {
+        print(weatherResponse!)
     }
 
 

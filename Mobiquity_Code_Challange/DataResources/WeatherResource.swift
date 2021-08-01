@@ -8,19 +8,21 @@
 import Foundation
 
 struct WeatherResource {
+    
+    let httpUtility = HttpUtility()
+    
     func getTodayForcast(completion: @escaping (_ result: TodayForcastData?) -> Void){
-        let httpUtility = HttpUtility()
-   
         httpUtility.fetchData(urlString: ApiEndpoints.todayForcast, resultType: TodayForcastData.self) { weatherResponse in
             _ = completion(weatherResponse)
         }
-    
-
     }
     
-//    func getfiveDayForcast(completion: @escaping (_ result: TodayForcast?) -> Void){
-//        
-//    }
+    func getfiveDayForcast(completion: @escaping (_ result: FiveDayForcast?) -> Void){
+        httpUtility.fetchData(urlString: ApiEndpoints.fiveDayForcast, resultType: FiveDayForcast.self) { weatherResponse in
+            _ = completion(weatherResponse)
+        }
+    }
+    
     
     }
     

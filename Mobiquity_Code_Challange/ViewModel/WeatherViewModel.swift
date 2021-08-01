@@ -8,18 +8,30 @@
 import Foundation
 
 protocol WeatherViewModelDelegate {
-    func didReceiveWeatherResponse(weatherResponse :TodayForcastData? )
+    func didReceiveWeatherResponseForToday(weatherResponse :TodayForcastData? )
+    
+    func didReceiveWeatherResponseForFiveDays(weatherResponse :FiveDayForcast?)
 }
 
 struct WeatherViewModel {
     var delegate : WeatherViewModelDelegate?
     
-    func ServiceCallToGetData() {
+    func ServiceCallToGetTodayForcast() {
         //use WeatherResource to call APIs
         let weatherResource = WeatherResource()
         weatherResource.getTodayForcast { (response) in
             DispatchQueue.main.async {
-                self.delegate?.didReceiveWeatherResponse(weatherResponse: response)
+                self.delegate?.didReceiveWeatherResponseForToday(weatherResponse: response)
+            }
+        }
+    }
+    
+    func ServiceCallToGetFiveDaysForcast() {
+        //use WeatherResource to call APIs
+        let weatherResource = WeatherResource()
+        weatherResource.getfiveDayForcast{ (response) in
+            DispatchQueue.main.async {
+                self.delegate?.didReceiveWeatherResponseForFiveDays(weatherResponse: response)
             }
         }
     }
