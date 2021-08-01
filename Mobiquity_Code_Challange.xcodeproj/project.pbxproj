@@ -120,7 +120,7 @@
 				337D72E826B6965D00097284 /* ViewModel */,
 				330A5C3E26B5789E001C12F1 /* AppDelegate.swift */,
 				330A5C4026B5789E001C12F1 /* SceneDelegate.swift */,
-				330A5C4226B5789E001C12F1 /* ViewController.swift */,
+				337D72F126B6F44A00097284 /* View */,
 				330A5C4426B5789E001C12F1 /* Main.storyboard */,
 				330A5C4A26B578A2001C12F1 /* Assets.xcassets */,
 				330A5C4C26B578A2001C12F1 /* LaunchScreen.storyboard */,
@@ -187,6 +187,14 @@
 				337D72EE26B69C4800097284 /* FiveDayForcast.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		337D72F126B6F44A00097284 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				330A5C4226B5789E001C12F1 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

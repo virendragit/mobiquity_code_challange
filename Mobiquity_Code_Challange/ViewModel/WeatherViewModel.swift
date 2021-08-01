@@ -22,7 +22,6 @@ struct WeatherViewModel {
                 self.delegate?.didReceiveWeatherResponse(weatherResponse: response)
             }
         }
-//        self.delegate?.didReceiveWeatherResponse(weatherResponse: TodayForcast(errorMessage:"error" ,data: nil))
     }
     
 }
