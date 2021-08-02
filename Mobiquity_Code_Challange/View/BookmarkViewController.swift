@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol BookMarkDelegate {
+    func didReceiveBookmark(bookmark :String?)
+}
+
 
 class BookmarkViewController: UIViewController {
+    
+    
+    var delegate : BookMarkDelegate?
     
     @IBOutlet weak var cityTextfield: UITextField!
     var selectedCity : String?
@@ -19,8 +26,8 @@ class BookmarkViewController: UIViewController {
         super.viewDidLoad()
         self.createAndSetupPickerView()
         self.dismissAndClosePickerView()
-        
     }
+ 
     
     func createAndSetupPickerView(){
         let pickerview = UIPickerView()
@@ -62,6 +69,12 @@ extension BookmarkViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.selectedCity = self.listOfCity[row]
         self.cityTextfield.text = self.selectedCity
+        
+        DispatchQueue.main.async {
+            self.delegate?.didReceiveBookmark(bookmark: self.selectedCity)
+        }
+
     }
 }
+
 
