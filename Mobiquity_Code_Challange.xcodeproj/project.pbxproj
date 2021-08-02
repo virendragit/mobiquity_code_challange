@@ -22,6 +22,7 @@
 		337D72EA26B69B2C00097284 /* WeatherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D72E926B69B2C00097284 /* WeatherResource.swift */; };
 		337D72ED26B69C3A00097284 /* TodayForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D72EC26B69C3A00097284 /* TodayForcast.swift */; };
 		337D72EF26B69C4800097284 /* FiveDayForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D72EE26B69C4800097284 /* FiveDayForcast.swift */; };
+		337D72F326B71B5000097284 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D72F226B71B5000097284 /* BookmarkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		337D72E926B69B2C00097284 /* WeatherResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResource.swift; sourceTree = "<group>"; };
 		337D72EC26B69C3A00097284 /* TodayForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayForcast.swift; sourceTree = "<group>"; };
 		337D72EE26B69C4800097284 /* FiveDayForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayForcast.swift; sourceTree = "<group>"; };
+		337D72F226B71B5000097284 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				330A5C4226B5789E001C12F1 /* ViewController.swift */,
+				337D72F226B71B5000097284 /* BookmarkViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337D72F326B71B5000097284 /* BookmarkViewController.swift in Sources */,
 				337D72EA26B69B2C00097284 /* WeatherResource.swift in Sources */,
 				330A5C4926B5789E001C12F1 /* Mobiquity_Code_Challange.xcdatamodeld in Sources */,
 				330A5C4326B5789E001C12F1 /* ViewController.swift in Sources */,

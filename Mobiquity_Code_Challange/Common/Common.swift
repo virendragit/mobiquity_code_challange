@@ -8,12 +8,7 @@
 import Foundation
 
 struct Constants {
-    static let ErrorAlertTitle = "Error"
-    static let OkAlertTitle = "Ok"
-    static let CancelAlertTitle = "Cancel"
-    
     static let apiKey = "fae7190d7e6433ec3a45285ffcf55c86"
-
 }
 
 struct ApiEndpoints

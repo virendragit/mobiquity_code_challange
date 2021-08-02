@@ -20,7 +20,7 @@ class ViewController: UIViewController, WeatherViewModelDelegate {
         weatherViewModel.delegate = self
         
        weatherViewModel.ServiceCallToGetTodayForcast()
-//        weatherViewModel.ServiceCallToGetFiveDaysForcast()
+
 
     }
     
