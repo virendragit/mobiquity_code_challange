@@ -11,8 +11,11 @@ struct WeatherResource {
     
     let httpUtility = HttpUtility()
     
-    func getTodayForcast(completion: @escaping (_ result: TodayForcastData?) -> Void){
-        httpUtility.fetchData(urlString: ApiEndpoints.todayForcast, resultType: TodayForcastData.self) { weatherResponse in
+    func getTodayForcast(cityname: String , completion: @escaping (_ result: TodayForcastData?) -> Void){
+        let todayPath = ApiEndpoints.todayForcast
+        let querypath = "q=\(cityname)&appid=\(Constants.apiKey)"
+        let finalUrl  = todayPath + "?" + querypath
+        httpUtility.fetchData(urlString: finalUrl, resultType: TodayForcastData.self) { weatherResponse in
             _ = completion(weatherResponse)
         }
     }

@@ -16,10 +16,12 @@ protocol WeatherViewModelDelegate {
 struct WeatherViewModel {
     var delegate : WeatherViewModelDelegate?
     
+    let cityValue = CityManager.shared.selectedCityName
+    
     func ServiceCallToGetTodayForcast() {
         //use WeatherResource to call APIs
         let weatherResource = WeatherResource()
-        weatherResource.getTodayForcast { (response) in
+        weatherResource.getTodayForcast(cityname: cityValue ?? "") { (response) in
             DispatchQueue.main.async {
                 self.delegate?.didReceiveWeatherResponseForToday(weatherResponse: response)
             }

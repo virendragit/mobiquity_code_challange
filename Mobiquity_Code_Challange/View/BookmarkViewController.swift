@@ -11,15 +11,13 @@ protocol BookMarkDelegate {
     func didReceiveBookmark(bookmark :String?)
 }
 
-
 class BookmarkViewController: UIViewController {
-    
     
     var delegate : BookMarkDelegate?
     
     @IBOutlet weak var cityTextfield: UITextField!
     var selectedCity : String?
-    var listOfCity = ["Mumbai","New Delhi","Chennai","Kolkata","London","Newyork","Stockholm","Banglore","Vienna"]
+    var listOfCity = ["Mumbai","Chennai","Kolkata","London","Newyork","Stockholm","Banglore","Vienna"]
     
     
     override func viewDidLoad() {
@@ -28,13 +26,11 @@ class BookmarkViewController: UIViewController {
         self.dismissAndClosePickerView()
     }
  
-    
     func createAndSetupPickerView(){
         let pickerview = UIPickerView()
         pickerview.delegate = self
         pickerview.dataSource = self
         self.cityTextfield.inputView = pickerview
-        
     }
     
     func dismissAndClosePickerView(){
@@ -69,6 +65,9 @@ extension BookmarkViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.selectedCity = self.listOfCity[row]
         self.cityTextfield.text = self.selectedCity
+        
+        CityManager.shared.selectedCityName = self.selectedCity
+        
         
         DispatchQueue.main.async {
             self.delegate?.didReceiveBookmark(bookmark: self.selectedCity)

@@ -7,14 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, WeatherViewModelDelegate,BookMarkDelegate{
+class ViewController: UIViewController ,BookMarkDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     
     var bookmarked : [String] = []
-    
-    private var weatherViewModel = WeatherViewModel()
-    var bookmarkView = BookmarkViewController()
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -22,16 +19,9 @@ class ViewController: UIViewController, WeatherViewModelDelegate,BookMarkDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        weatherViewModel.delegate = self
-       
         tableView.delegate = self
         tableView.dataSource = self
-        
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        weatherViewModel.ServiceCallToGetTodayForcast()
     }
 
     @IBAction func showBookMark(_ sender: Any) {
@@ -41,14 +31,6 @@ class ViewController: UIViewController, WeatherViewModelDelegate,BookMarkDelegat
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    func didReceiveWeatherResponseForToday(weatherResponse: TodayForcastData?) {
-        print(weatherResponse!)
-    }
-    
-    func didReceiveWeatherResponseForFiveDays(weatherResponse: FiveDayForcast?) {
-        print(weatherResponse!)
-    }
-    
     func didReceiveBookmark(bookmark: String?) {
         if let selectedCity = bookmark{
         bookmarked.append(selectedCity)
@@ -70,9 +52,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "cityViewStoryBoard") as! CityViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
 
 

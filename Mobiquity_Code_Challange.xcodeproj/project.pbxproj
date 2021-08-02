@@ -24,6 +24,8 @@
 		337D72EF26B69C4800097284 /* FiveDayForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D72EE26B69C4800097284 /* FiveDayForcast.swift */; };
 		337D72F326B71B5000097284 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D72F226B71B5000097284 /* BookmarkViewController.swift */; };
 		337D72F526B7CD9000097284 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D72F426B7CD9000097284 /* Extentions.swift */; };
+		337D72F826B7D06700097284 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D72F726B7D06700097284 /* CityViewController.swift */; };
+		337D72FA26B7D79400097284 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D72F926B7D79400097284 /* Singleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		337D72EE26B69C4800097284 /* FiveDayForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayForcast.swift; sourceTree = "<group>"; };
 		337D72F226B71B5000097284 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		337D72F426B7CD9000097284 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		337D72F726B7D06700097284 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		337D72F926B7D79400097284 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		330A5C3D26B5789E001C12F1 /* Mobiquity_Code_Challange */ = {
 			isa = PBXGroup;
 			children = (
+				337D72FB26B7D7A600097284 /* Singleton */,
 				337D72F626B7CDA100097284 /* Extension */,
 				330A5C7626B67690001C12F1 /* Service */,
 				330A5C7326B6760B001C12F1 /* Common */,
@@ -199,6 +204,7 @@
 			children = (
 				330A5C4226B5789E001C12F1 /* ViewController.swift */,
 				337D72F226B71B5000097284 /* BookmarkViewController.swift */,
+				337D72F726B7D06700097284 /* CityViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +215,14 @@
 				337D72F426B7CD9000097284 /* Extentions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		337D72FB26B7D7A600097284 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				337D72F926B7D79400097284 /* Singleton.swift */,
+			);
+			path = Singleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +356,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				337D72F326B71B5000097284 /* BookmarkViewController.swift in Sources */,
+				337D72FA26B7D79400097284 /* Singleton.swift in Sources */,
+				337D72F826B7D06700097284 /* CityViewController.swift in Sources */,
 				337D72EA26B69B2C00097284 /* WeatherResource.swift in Sources */,
 				330A5C4926B5789E001C12F1 /* Mobiquity_Code_Challange.xcdatamodeld in Sources */,
 				330A5C4326B5789E001C12F1 /* ViewController.swift in Sources */,
